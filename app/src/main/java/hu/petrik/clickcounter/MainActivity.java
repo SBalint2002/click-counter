@@ -26,20 +26,26 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int szam = Integer.parseInt(szamlalo.getText().toString()) + 1;
                 szamlalo.setText(String.valueOf(szam));
-                if (szam < 0){
-                    szamlalo.setTextColor(Color.argb(255,0,255,0));
+                if (szam < 0) {
+                    szamlalo.setTextColor(Color.argb(255, 0, 255, 0));
                 }
-                if (szam > 0){
-                    int primszamlalo=0;
+                if (szam == 0) {
+                    szamlalo.setTextColor(Color.BLUE);
+                }
+
+                if (szam > 0) {
+                    int primszamlalo = 0;
                     for (int i = 1; i <= szam; i++) {
-                        if (szam % i == 0){
+                        if (szam % i == 0) {
                             primszamlalo++;
                         }
                     }
-                    if (primszamlalo==2){
-                        szamlalo.setTextColor(Color.argb(255,255,255,255));
-                    }else if (szam > 0){
-                        szamlalo.setTextColor(Color.argb(255,0,255,0));
+                    if (szam == 0) {
+                        szamlalo.setTextColor(Color.BLUE);
+                    } else if (primszamlalo == 2) {
+                        szamlalo.setTextColor(Color.argb(255, 255, 255, 255));
+                    } else if (szam > 0) {
+                        szamlalo.setTextColor(Color.argb(255, 0, 255, 0));
                     }
                 }
             }
@@ -50,20 +56,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int szam = Integer.parseInt(szamlalo.getText().toString()) - 1;
                 szamlalo.setText(String.valueOf(szam));
-                if (szam < 0){
-                    szamlalo.setTextColor(Color.argb(255,255,0,0));
+                if (szam < 0) {
+                    szamlalo.setTextColor(Color.argb(255, 255, 0, 0));
                 }
-                if (szam > 0){
-                    int primszamlalo=0;
+                if (szam == 0) {
+                    szamlalo.setTextColor(Color.BLUE);
+                }
+                if (szam > 0) {
+                    int primszamlalo = 0;
                     for (int i = 1; i <= szam; i++) {
-                        if (szam % i == 0){
+                        if (szam % i == 0) {
                             primszamlalo++;
                         }
                     }
-                    if (primszamlalo==2){
-                        szamlalo.setTextColor(Color.argb(255,255,255,255));
-                    }else if (szam > 0){
-                        szamlalo.setTextColor(Color.argb(255,0,255,0));
+                    if (szam == 0) {
+                        szamlalo.setTextColor(Color.BLUE);
+                    } else if (primszamlalo == 2) {
+                        szamlalo.setTextColor(Color.argb(255, 255, 255, 255));
+                    } else if (szam > 0) {
+                        szamlalo.setTextColor(Color.argb(255, 0, 255, 0));
                     }
                 }
             }
@@ -88,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void init(){
+    private void init() {
         plusz = findViewById(R.id.plusz);
         szamlalo = findViewById(R.id.szamlalo);
         minusz = findViewById(R.id.minusz);

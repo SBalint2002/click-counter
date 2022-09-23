@@ -26,8 +26,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int szam = Integer.parseInt(szamlalo.getText().toString()) + 1;
                 szamlalo.setText(String.valueOf(szam));
-                if (szam > 0){
+                if (szam < 0){
                     szamlalo.setTextColor(Color.argb(255,0,255,0));
+                }
+                if (szam > 0){
+                    int primszamlalo=0;
+                    for (int i = 1; i <= szam; i++) {
+                        if (szam % i == 0){
+                            primszamlalo++;
+                        }
+                    }
+                    if (primszamlalo==2){
+                        szamlalo.setTextColor(Color.argb(255,255,255,255));
+                    }else if (szam > 0){
+                        szamlalo.setTextColor(Color.argb(255,0,255,0));
+                    }
                 }
             }
         });
@@ -40,14 +53,36 @@ public class MainActivity extends AppCompatActivity {
                 if (szam < 0){
                     szamlalo.setTextColor(Color.argb(255,255,0,0));
                 }
+                if (szam > 0){
+                    int primszamlalo=0;
+                    for (int i = 1; i <= szam; i++) {
+                        if (szam % i == 0){
+                            primszamlalo++;
+                        }
+                    }
+                    if (primszamlalo==2){
+                        szamlalo.setTextColor(Color.argb(255,255,255,255));
+                    }else if (szam > 0){
+                        szamlalo.setTextColor(Color.argb(255,0,255,0));
+                    }
+                }
             }
         });
 
-        szamlalo.setOnClickListener(new View.OnClickListener() {
+        /*szamlalo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 szamlalo.setText("0");
                 szamlalo.setTextColor(Color.argb(255,0,0,255));
+            }
+        });*/
+
+        szamlalo.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                szamlalo.setText("0");
+                szamlalo.setTextColor(Color.argb(255,0,0,255));
+                return true;
             }
         });
     }

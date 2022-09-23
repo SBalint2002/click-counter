@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View view) {
                 szamlalo.setText("0");
-                szamlalo.setTextColor(Color.argb(255,0,0,255));
+                szamlalo.setTextColor(getResources().getColor(R.color.kekecske));
                 return true;
             }
         });

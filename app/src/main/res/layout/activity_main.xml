@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/plusz"
-        android:layout_above="@+id/szam"
+        android:layout_above="@+id/szamlalo"
         android:layout_centerHorizontal="true"
         android:text="+"
         android:textSize="25sp"/>
@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/szam"
+        android:id="@+id/szamlalo"
         android:text="0"
         android:layout_centerHorizontal="true"
         android:gravity="center"
@@ -29,13 +29,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textColor="#0000FF"/>
+        android:textColor="#0000FF" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/minusz"
-        android:layout_below="@+id/szam"
+        android:layout_below="@+id/szamlalo"
         android:layout_centerHorizontal="true"
         android:textSize="25sp"
         android:text="-"/>

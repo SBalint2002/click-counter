@@ -2,6 +2,7 @@ package hu.petrik.clickcounter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int szam = Integer.parseInt(szamlalo.getText().toString()) + 1;
                 szamlalo.setText(String.valueOf(szam));
+                if (szam > 0){
+                    szamlalo.setTextColor(Color.argb(255,0,255,0));
+                }
             }
         });
 
@@ -33,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int szam = Integer.parseInt(szamlalo.getText().toString()) - 1;
                 szamlalo.setText(String.valueOf(szam));
+                if (szam < 0){
+                    szamlalo.setTextColor(Color.argb(255,255,0,0));
+                }
             }
         });
 
@@ -40,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 szamlalo.setText("0");
+                szamlalo.setTextColor(Color.argb(255,0,0,255));
             }
         });
     }
